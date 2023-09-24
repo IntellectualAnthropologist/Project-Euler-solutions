@@ -1,0 +1,30 @@
+#here is a cool way# Project Euler 2
+# find the sum of the even valued terms of fibbonaci sequence below 4 millon
+
+# this is the sum we are adding everything to
+fib_sum = 0
+
+# this is the list that the created fibbonaci numbers are going to be appended to
+fib_seq = []
+
+# current is the current number that gets appended, past is a variable to store the previous number 
+# so that you can add it to current. next_n is the number that you use to store the next current so 
+# are still able to update current and past.
+current = 2
+past = 1
+next_n = 0
+
+# while our current number is less than 4,000,000 we append current, defime our next current as itself 
++ prev and then prev as current then you update current to next_n
+
+while current <= 4000000:
+    fib_seq.append(current)
+    next_n = current + past
+    past = current
+    current = next_n
+
+for n in fib_seq:
+    if n % 2 == 0:
+        fib_sum += n
+
+print(fib_sum)   

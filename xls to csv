@@ -1,4 +1,13 @@
+# to convert from xls to csv you just need to import pandaas and xlrd. You define your old data as pd.read_excel("")
+# and perform : .to_csv("")
 import pandas as pd
 import xlrd
-data_xls = pd.read_excel('ohio.xls', 'Sheet1', index_col=None)
-data_xls.to_csv('your_csv.csv', encoding='utf-8')
+
+def xls_2_csv(xlsname, csvname):
+    ''' takes two arumgents, one for xls file name and one for the new csv name. Must type .csv or .xls'''
+    # xls_old is the varible to store the old data
+    xls_old = pd.read_excel(xls_name, index_col=None)
+    # this is the cose that writes a new file with that name
+    data_xls.to_csv(csv_name, encoding='utf-8')
+    
+xls_2_csv()
